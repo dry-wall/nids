@@ -1,0 +1,21 @@
+# secrets
+.env
+backend/.env
+
+# environments / caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+frontend/node_modules/
+frontend/dist/
+
+# data (large; regenerate with: python run.py reproduce)
+data/raw/
+data/processed/
+data/samples/test_sample_50k.csv
+
+# runtime state
+backend/data/
+backend/uploads/
+

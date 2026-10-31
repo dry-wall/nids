@@ -1,0 +1,160 @@
+﻿.\.venv\Scripts\python.exe : 
+C:\Users\dhawa\repos\nids-genai\.venv\Lib\site-packages\sklearn\linear_model\_logistic.py:455: OptimizeWarning: 
+Unknown solver options: iprint
+At line:1 char:411
++ ... N_OPTS='0'; .\.venv\Scripts\python.exe -m src.detect.train 2>&1 | Whe ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\dhawa\...options: iprint:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  opt_res = optimize.minimize(
+rows=1,830,365 attacks=326,332 seeds=(42, 43, 44)
+
+=== Logistic Regression  seed=42
+thr=0.8686  test P=0.9400 R=0.7401 F1=0.8282 FPR=1.0252% ROC-AUC=0.94853 (4.6s)
+
+=== Random Forest  seed=42
+thr=0.6986  test P=0.9937 R=0.9851 F1=0.9894 FPR=0.1361% ROC-AUC=0.99982 (39.4s)
+
+=== DNN (64-32)  seed=42
+Epoch 1/15
+2026-10-31 17:43:53.997902: E tensorflow/core/framework/node_def_util.cc:676] NodeDef mentions attribute 
+use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, 
+other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; 
+attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; 
+attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; 
+attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. 
+Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_16}}
+2026-10-31 17:43:59.322194: E tensorflow/core/framework/node_def_util.cc:676] NodeDef mentions attribute 
+use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, 
+other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; 
+attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; 
+attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; 
+attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. 
+Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_15}}
+Epoch 2/15
+Epoch 3/15
+Epoch 4/15
+Epoch 5/15
+Epoch 6/15
+Epoch 7/15
+Epoch 8/15
+Epoch 9/15
+Epoch 10/15
+Epoch 11/15
+Epoch 12/15
+Epoch 13/15
+Epoch 14/15
+Epoch 15/15
+C:\Users\dhawa\repos\nids-genai\.venv\Lib\site-packages\sklearn\linear_model\_logistic.py:455: OptimizeWarning: 
+Unknown solver options: iprint
+  opt_res = optimize.minimize(
+thr=0.6933  test P=0.9835 R=0.9792 F1=0.9814 FPR=0.3555% ROC-AUC=0.99949 (91.3s)
+
+=== Logistic Regression  seed=43
+thr=0.8686  test P=0.9400 R=0.7401 F1=0.8282 FPR=1.0252% ROC-AUC=0.94853 (6.4s)
+
+=== Random Forest  seed=43
+thr=0.7273  test P=0.9944 R=0.9845 F1=0.9894 FPR=0.1201% ROC-AUC=0.99983 (40.5s)
+
+=== DNN (64-32)  seed=43
+Epoch 1/15
+2026-10-31 17:46:12.570962: E tensorflow/core/framework/node_def_util.cc:676] NodeDef mentions attribute 
+use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, 
+other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; 
+attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; 
+attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; 
+attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. 
+Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_16}}
+2026-10-31 17:46:19.033947: E tensorflow/core/framework/node_def_util.cc:676] NodeDef mentions attribute 
+use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, 
+other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; 
+attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; 
+attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; 
+attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. 
+Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_15}}
+Epoch 2/15
+Epoch 3/15
+Epoch 4/15
+Epoch 5/15
+Epoch 6/15
+Epoch 7/15
+Epoch 8/15
+Epoch 9/15
+Epoch 10/15
+Epoch 11/15
+Epoch 12/15
+Epoch 13/15
+Epoch 14/15
+Epoch 15/15
+C:\Users\dhawa\repos\nids-genai\.venv\Lib\site-packages\sklearn\linear_model\_logistic.py:455: OptimizeWarning: 
+Unknown solver options: iprint
+  opt_res = optimize.minimize(
+thr=0.6687  test P=0.9845 R=0.9813 F1=0.9829 FPR=0.3347% ROC-AUC=0.99957 (74.0s)
+
+=== Logistic Regression  seed=44
+thr=0.8686  test P=0.9400 R=0.7401 F1=0.8282 FPR=1.0252% ROC-AUC=0.94853 (5.1s)
+
+=== Random Forest  seed=44
+thr=0.6913  test P=0.9933 R=0.9852 F1=0.9892 FPR=0.1432% ROC-AUC=0.99983 (37.2s)
+
+=== DNN (64-32)  seed=44
+Epoch 1/15
+2026-10-31 17:48:12.979933: E tensorflow/core/framework/node_def_util.cc:676] NodeDef mentions attribute 
+use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, 
+other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; 
+attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; 
+attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; 
+attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. 
+Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_16}}
+Epoch 2/15
+Epoch 3/15
+Epoch 4/15
+Epoch 5/15
+Epoch 6/15
+Epoch 7/15
+Epoch 8/15
+Epoch 9/15
+Epoch 10/15
+Epoch 11/15
+Epoch 12/15
+Epoch 13/15
+Epoch 14/15
+Epoch 15/15
+C:\Users\dhawa\repos\nids-genai\.venv\Lib\site-packages\sklearn\linear_model\_logistic.py:455: OptimizeWarning: 
+Unknown solver options: iprint
+  opt_res = optimize.minimize(
+thr=0.7945  test P=0.9841 R=0.9788 F1=0.9815 FPR=0.3426% ROC-AUC=0.99956 (67.9s)
+
+=== temporal Logistic Regression
+temporal test P=0.9550 R=0.6141 F1=0.7475 FPR=0.7237%
+
+=== temporal Random Forest
+temporal test P=0.9812 R=0.1691 F1=0.2885 FPR=0.0809%
+
+=== temporal DNN (64-32)
+Epoch 1/15
+2026-10-31 17:49:58.474160: E tensorflow/core/framework/node_def_util.cc:676] NodeDef mentions attribute 
+use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, 
+other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; 
+attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; 
+attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; 
+attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. 
+Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_16}}
+Epoch 2/15
+Epoch 3/15
+Epoch 4/15
+Epoch 5/15
+Epoch 6/15
+Epoch 7/15
+Epoch 8/15
+Epoch 9/15
+Epoch 10/15
+Epoch 11/15
+Epoch 12/15
+Epoch 13/15
+temporal test P=0.9817 R=0.4460 F1=0.6133 FPR=0.2077%
+tables -> C:\Users\dhawa\repos\nids-genai\artifacts\tables
+figures -> C:\Users\dhawa\repos\nids-genai\artifacts\figures
+
+Done in 471s

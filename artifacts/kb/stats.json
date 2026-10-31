@@ -1,0 +1,22 @@
+{
+  "chunks": 2375,
+  "by_source": {
+    "MITRE ATT&CK Enterprise": 2229,
+    "NIST SP 800-61 Rev. 3": 146
+  },
+  "by_doc_type": {
+    "technique": 752,
+    "mitigation": 1477,
+    "guidance": 17,
+    "csf-element": 129
+  },
+  "attack": {
+    "version": null,
+    "techniques": 706
+  },
+  "nist": {
+    "pages": "10-43"
+  },
+  "vocabulary": 69342,
+  "chunking": "300-word windows, 50-word overlap; IDs source:section:index"
+}

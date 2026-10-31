@@ -1,0 +1,51 @@
+[
+  {
+    "name": "demo_mixed_2k.csv",
+    "title": "Mixed week - 2k flows",
+    "description": "A cross-section of the whole week, including every attack type.",
+    "rows": 1987,
+    "attacks": 587,
+    "families": {
+      "Benign": 1400,
+      "DoS": 170,
+      "DDoS": 150,
+      "Brute Force": 80,
+      "Web Attack": 70,
+      "PortScan": 60,
+      "Bot": 50,
+      "Infiltration": 6,
+      "Heartbleed": 1
+    },
+    "size_kb": 889
+  },
+  {
+    "name": "wednesday_slice_8k.csv",
+    "title": "Wednesday - 8k flows",
+    "description": "Held-out flows from one stretch of Wednesday, when the denial-of-service attacks ran.",
+    "rows": 8000,
+    "attacks": 5506,
+    "families": {
+      "DoS": 5506,
+      "Benign": 2494
+    },
+    "size_kb": 3827
+  },
+  {
+    "name": "test_sample_50k.csv",
+    "title": "Large file - 50k flows",
+    "description": "Fifty thousand flows in their natural mix, to see how fast it runs.",
+    "rows": 50000,
+    "attacks": 8905,
+    "families": {
+      "Benign": 41095,
+      "DoS": 5088,
+      "DDoS": 3458,
+      "Brute Force": 223,
+      "Web Attack": 52,
+      "PortScan": 43,
+      "Bot": 38,
+      "Infiltration": 3
+    },
+    "size_kb": 22302
+  }
+]

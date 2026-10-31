@@ -1,0 +1,117 @@
+﻿@import "tailwindcss";
+
+@theme {
+  --font-sans: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Inter Variable", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  --color-bg: #ffffff;
+  --color-tile: #f5f5f7;
+  --color-raised: #ffffff;
+  --color-hair: #e3e3e8;
+  --color-line: #d2d2d7;
+  --color-ink: #1d1d1f;
+  --color-muted: #6e6e73;
+  --color-faint: #86868b;
+
+  --color-blue: #0071e3;
+  --color-blue-hover: #0077ed;
+  --color-link: #0066cc;
+
+  /* Apple system colours, used to mean something (attack types, statuses, models) */
+  --color-red: #e3311d;
+  --color-orange: #f56300;
+  --color-yellow: #c99400;
+  --color-green: #1d9a48;
+  --color-teal: #0a9ab0;
+  --color-indigo: #5856d6;
+  --color-purple: #a24bd6;
+  --color-pink: #e0306f;
+
+  --color-red-soft: #fdecea;
+  --color-orange-soft: #fff1e5;
+  --color-green-soft: #e6f6ea;
+  --color-blue-soft: #e8f2fd;
+
+  --color-nav: rgba(255, 255, 255, .8);
+  --color-nav-line: rgba(0, 0, 0, .08);
+  --color-hover: rgba(0, 0, 0, .035);
+  --color-chart-muted: #c7c7cc;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #000000;
+  --color-tile: #1c1c1e;
+  --color-raised: #2c2c2e;
+  --color-hair: #2c2c2e;
+  --color-line: #3a3a3c;
+  --color-ink: #f5f5f7;
+  --color-muted: #a1a1a6;
+  --color-faint: #86868b;
+  --color-blue: #0a84ff;
+  --color-blue-hover: #409cff;
+  --color-link: #2997ff;
+  --color-red: #ff453a;
+  --color-orange: #ff9f0a;
+  --color-yellow: #ffd60a;
+  --color-green: #30d158;
+  --color-teal: #40c8e0;
+  --color-indigo: #5e5ce6;
+  --color-purple: #bf5af2;
+  --color-pink: #ff375f;
+  --color-red-soft: rgba(255, 69, 58, .14);
+  --color-orange-soft: rgba(255, 159, 10, .14);
+  --color-green-soft: rgba(48, 209, 88, .14);
+  --color-blue-soft: rgba(10, 132, 255, .16);
+  --color-nav: rgba(22, 22, 23, .8);
+  --color-nav-line: rgba(255, 255, 255, .1);
+  --color-hover: rgba(255, 255, 255, .05);
+  --color-chart-muted: #48484a;
+}
+
+@layer base {
+  html, body, #root { min-height: 100%; }
+  body {
+    background: var(--color-bg); color: var(--color-ink); font-family: var(--font-sans);
+    font-size: 14px; line-height: 1.45; letter-spacing: -0.006em;
+    -webkit-font-smoothing: antialiased; transition: background-color .25s, color .25s;
+  }
+  input, select, textarea, button { font: inherit; color: inherit; letter-spacing: inherit; }
+  ::selection { background: color-mix(in srgb, var(--color-blue) 28%, transparent); }
+  a { color: var(--color-link); }
+  :focus-visible { outline: 2px solid var(--color-blue); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+}
+
+@layer components {
+  .num { font-variant-numeric: tabular-nums; }
+  .tile { background: var(--color-tile); border-radius: 18px; }
+  .input {
+    width: 100%; background: var(--color-raised); border: 1px solid var(--color-line); border-radius: 10px;
+    padding: 7px 12px; outline: none; transition: border-color .15s, box-shadow .15s;
+  }
+  .input:focus { border-color: var(--color-blue); box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-blue) 20%, transparent); }
+  .select {
+    appearance: none; background: var(--color-raised) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2386868b' stroke-width='1.4'/%3E%3C/svg%3E") no-repeat right 11px center;
+    border: 1px solid var(--color-line); border-radius: 10px; padding: 6px 30px 6px 11px; outline: none;
+  }
+  .select:focus { border-color: var(--color-blue); }
+  .grid-table { width: 100%; font-variant-numeric: tabular-nums; }
+  .grid-table th { text-align: left; font-weight: 400; color: var(--color-muted); font-size: 12.5px; padding: 0 10px 6px; }
+  .grid-table td { padding: 7px 10px; border-top: 1px solid var(--color-line); }
+  .grid-table th:first-child, .grid-table td:first-child { padding-left: 0; }
+  .grid-table th:last-child, .grid-table td:last-child { padding-right: 0; }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes progress { 0% { transform: translateX(-100%); } 100% { transform: translateX(300%); } }
+@keyframes appear { from { opacity: 0; } to { opacity: 1; } }
+.appear { animation: appear .25s ease-out both; }
+.spinner { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--color-line); border-top-color: var(--color-ink); animation: spin .8s linear infinite; }
+.progress-line { position: relative; overflow: hidden; height: 3px; background: var(--color-line); border-radius: 3px; }
+.progress-line::after { content: ""; position: absolute; inset: 0; width: 35%; background: var(--color-blue); border-radius: 3px; animation: progress 1.2s ease-in-out infinite; }
+input[type=range] { accent-color: var(--color-blue); }
+
+.recharts-cartesian-grid line { stroke: var(--color-line); stroke-opacity: .6; }
+.recharts-text { fill: var(--color-faint); font-size: 11px; }
+.recharts-cartesian-axis-line, .recharts-cartesian-axis-tick-line { stroke: var(--color-line); }

@@ -1,0 +1,206 @@
+{
+  "dataset": "CIC-IDS2017 MachineLearningCVE (8 daily CSVs)",
+  "rows_raw": 2830743,
+  "rows_with_inf_in_features": 2867,
+  "rows_with_missing_features_after_inf_to_nan": 2867,
+  "exact_duplicates_removed": 308381,
+  "feature_space_duplicates_removed": 691997,
+  "ambiguous_feature_vectors_multi_label": 1707,
+  "rows_clean": 1830365,
+  "attack_rows_clean": 326332,
+  "benign_rows_clean": 1504033,
+  "features": [
+    "Flow Duration",
+    "Total Fwd Packets",
+    "Total Backward Packets",
+    "Total Length of Fwd Packets",
+    "Total Length of Bwd Packets",
+    "Flow Bytes/s",
+    "Flow Packets/s",
+    "Fwd Packet Length Mean",
+    "Bwd Packet Length Mean",
+    "SYN Flag Count",
+    "ACK Flag Count",
+    "Average Packet Size"
+  ],
+  "n_columns_total": 78,
+  "class_counts": [
+    {
+      "label": "BENIGN",
+      "raw": 2273097,
+      "after_cleaning": 1504033,
+      "family": "Benign",
+      "removed": 769064,
+      "removed_pct": 33.83
+    },
+    {
+      "label": "DoS Hulk",
+      "raw": 231073,
+      "after_cleaning": 166335,
+      "family": "DoS",
+      "removed": 64738,
+      "removed_pct": 28.02
+    },
+    {
+      "label": "PortScan",
+      "raw": 158930,
+      "after_cleaning": 1612,
+      "family": "PortScan",
+      "removed": 157318,
+      "removed_pct": 98.99
+    },
+    {
+      "label": "DDoS",
+      "raw": 128027,
+      "after_cleaning": 127188,
+      "family": "DDoS",
+      "removed": 839,
+      "removed_pct": 0.66
+    },
+    {
+      "label": "DoS GoldenEye",
+      "raw": 10293,
+      "after_cleaning": 10281,
+      "family": "DoS",
+      "removed": 12,
+      "removed_pct": 0.12
+    },
+    {
+      "label": "FTP-Patator",
+      "raw": 7938,
+      "after_cleaning": 4259,
+      "family": "Brute Force",
+      "removed": 3679,
+      "removed_pct": 46.35
+    },
+    {
+      "label": "SSH-Patator",
+      "raw": 5897,
+      "after_cleaning": 3149,
+      "family": "Brute Force",
+      "removed": 2748,
+      "removed_pct": 46.6
+    },
+    {
+      "label": "DoS slowloris",
+      "raw": 5796,
+      "after_cleaning": 4867,
+      "family": "DoS",
+      "removed": 929,
+      "removed_pct": 16.03
+    },
+    {
+      "label": "DoS Slowhttptest",
+      "raw": 5499,
+      "after_cleaning": 5172,
+      "family": "DoS",
+      "removed": 327,
+      "removed_pct": 5.95
+    },
+    {
+      "label": "Bot",
+      "raw": 1966,
+      "after_cleaning": 1325,
+      "family": "Bot",
+      "removed": 641,
+      "removed_pct": 32.6
+    },
+    {
+      "label": "Web Attack - Brute Force",
+      "raw": 1507,
+      "after_cleaning": 1426,
+      "family": "Web Attack",
+      "removed": 81,
+      "removed_pct": 5.37
+    },
+    {
+      "label": "Web Attack - XSS",
+      "raw": 652,
+      "after_cleaning": 651,
+      "family": "Web Attack",
+      "removed": 1,
+      "removed_pct": 0.15
+    },
+    {
+      "label": "Infiltration",
+      "raw": 36,
+      "after_cleaning": 36,
+      "family": "Infiltration",
+      "removed": 0,
+      "removed_pct": 0.0
+    },
+    {
+      "label": "Web Attack - Sql Injection",
+      "raw": 21,
+      "after_cleaning": 20,
+      "family": "Web Attack",
+      "removed": 1,
+      "removed_pct": 4.76
+    },
+    {
+      "label": "Heartbleed",
+      "raw": 11,
+      "after_cleaning": 11,
+      "family": "Heartbleed",
+      "removed": 0,
+      "removed_pct": 0.0
+    }
+  ],
+  "family_by_day": {
+    "Friday": {
+      "Benign": 274998,
+      "Bot": 1325,
+      "Brute Force": 0,
+      "DDoS": 127188,
+      "DoS": 0,
+      "Heartbleed": 0,
+      "Infiltration": 0,
+      "PortScan": 1612,
+      "Web Attack": 0
+    },
+    "Monday": {
+      "Benign": 370591,
+      "Bot": 0,
+      "Brute Force": 0,
+      "DDoS": 0,
+      "DoS": 0,
+      "Heartbleed": 0,
+      "Infiltration": 0,
+      "PortScan": 0,
+      "Web Attack": 0
+    },
+    "Thursday": {
+      "Benign": 254199,
+      "Bot": 0,
+      "Brute Force": 0,
+      "DDoS": 0,
+      "DoS": 0,
+      "Heartbleed": 0,
+      "Infiltration": 36,
+      "PortScan": 0,
+      "Web Attack": 2097
+    },
+    "Tuesday": {
+      "Benign": 306133,
+      "Bot": 0,
+      "Brute Force": 7408,
+      "DDoS": 0,
+      "DoS": 0,
+      "Heartbleed": 0,
+      "Infiltration": 0,
+      "PortScan": 0,
+      "Web Attack": 0
+    },
+    "Wednesday": {
+      "Benign": 298112,
+      "Bot": 0,
+      "Brute Force": 0,
+      "DDoS": 0,
+      "DoS": 186655,
+      "Heartbleed": 11,
+      "Infiltration": 0,
+      "PortScan": 0,
+      "Web Attack": 0
+    }
+  }
+}

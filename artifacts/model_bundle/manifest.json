@@ -1,0 +1,53 @@
+{
+  "version": "phase1-v1",
+  "created": "2026-10-31T17:50:45",
+  "features": [
+    "Flow Duration",
+    "Total Fwd Packets",
+    "Total Backward Packets",
+    "Total Length of Fwd Packets",
+    "Total Length of Bwd Packets",
+    "Flow Bytes/s",
+    "Flow Packets/s",
+    "Fwd Packet Length Mean",
+    "Bwd Packet Length Mean",
+    "SYN Flag Count",
+    "ACK Flag Count",
+    "Average Packet Size"
+  ],
+  "default_model": "dnn",
+  "models": {
+    "lr": {
+      "name": "Logistic Regression",
+      "threshold": 0.8685727412810164
+    },
+    "rf": {
+      "name": "Random Forest",
+      "threshold": 0.6986115778655081
+    },
+    "dnn": {
+      "name": "DNN (64-32)",
+      "threshold": 0.6933231949806213
+    }
+  },
+  "target_fpr": 0.01,
+  "split_seed": 42,
+  "model_seeds": [
+    42,
+    43,
+    44
+  ],
+  "data_sha256_16": "9536609435790c87",
+  "rows": {
+    "train": 1281255,
+    "val": 274555,
+    "test": 274555
+  },
+  "versions": {
+    "python": "3.12.6",
+    "numpy": "2.0.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.5.2",
+    "tensorflow": "2.18.0"
+  }
+}

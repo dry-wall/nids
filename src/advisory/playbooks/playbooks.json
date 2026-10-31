@@ -1,0 +1,98 @@
+{
+  "DoS": {
+    "summary": "The flow's volume and timing profile is consistent with an application- or host-level denial-of-service attempt.",
+    "technique_ids": ["T1499"],
+    "impact": "If real, the targeted service could slow down or become unavailable as connection slots, threads or CPU are exhausted.",
+    "actions": [
+      "Check the targeted service's health (latency, error rate, open connections) for the same time window.",
+      "Look for many similar flows from the same source or to the same destination and port.",
+      "Apply per-source rate limits or connection caps at the load balancer or reverse proxy.",
+      "Tighten server timeouts for slow or incomplete requests (slow-header and slow-body patterns).",
+      "Preserve flow records and server logs for the incident timeline."
+    ]
+  },
+  "DDoS": {
+    "summary": "The flow shows a high-rate traffic profile consistent with participation in a distributed flood against a network resource.",
+    "technique_ids": ["T1498"],
+    "impact": "If real, link or upstream capacity could saturate and disrupt every service behind the affected segment, not only the target.",
+    "actions": [
+      "Confirm whether many distinct sources are sending similar traffic to the same destination.",
+      "Measure inbound bandwidth and packet rate on the affected link against its normal baseline.",
+      "Engage upstream filtering or a scrubbing service if volume exceeds local capacity.",
+      "Apply edge rate limiting or temporary filtering for the observed traffic pattern.",
+      "Record the start time, peak rate and affected services for the incident report."
+    ]
+  },
+  "PortScan": {
+    "summary": "The flow is short with few packets and little payload, a pattern typical of network service discovery probes.",
+    "technique_ids": ["T1046"],
+    "impact": "If real, an adversary is mapping reachable services, which commonly precedes targeted exploitation.",
+    "actions": [
+      "Check whether the same source contacted many ports or hosts within a short window.",
+      "Review which probed services are actually exposed and whether they need to be.",
+      "Close or filter unnecessary ports at the firewall and segment exposed services.",
+      "Watch the source for follow-up connection attempts to the services it found.",
+      "Add the observed pattern to monitoring so repeated scans raise a correlated alert."
+    ]
+  },
+  "Brute Force": {
+    "summary": "The flow shows repeated, similar-sized exchanges consistent with automated credential guessing against an authentication service.",
+    "technique_ids": ["T1110"],
+    "impact": "If real, an account on the targeted service could be compromised, giving the adversary authenticated access.",
+    "actions": [
+      "Review authentication logs on the destination service for bursts of failed logins.",
+      "Check for any successful login following the failures from the same source.",
+      "Enforce account lockout or progressive delays and require multi-factor authentication.",
+      "Rate-limit or block the source at the perimeter if the activity continues.",
+      "Reset credentials for any account with a suspicious successful login."
+    ]
+  },
+  "Web Attack": {
+    "summary": "The flow targets a web service with a request/response profile that deviates from normal browsing traffic.",
+    "technique_ids": ["T1190"],
+    "impact": "If real, a public-facing application could be exploited through injected input, leading to data exposure or code execution.",
+    "actions": [
+      "Inspect web server and application logs for the request content in this time window.",
+      "Look for injection or script patterns in parameters, headers and form fields.",
+      "Enable or tighten web application firewall rules for the affected application.",
+      "Verify input validation and parameterised queries in the targeted endpoints.",
+      "Check the application database and server for signs of unexpected changes."
+    ]
+  },
+  "Bot": {
+    "summary": "The flow's regular, low-volume exchange pattern is consistent with automated command-and-control style communication.",
+    "technique_ids": ["T1071"],
+    "impact": "If real, an internal host may be under remote control and could be used for data theft or further attacks.",
+    "actions": [
+      "Identify the internal host involved and check it for unknown processes and scheduled tasks.",
+      "Look for periodic connections from that host to the same external destination.",
+      "Review proxy and DNS logs for the destination's reputation and history.",
+      "Isolate the host from the network if compromise indicators are confirmed.",
+      "Collect volatile evidence before reimaging, following the incident response plan."
+    ]
+  },
+  "Infiltration": {
+    "summary": "The flow deviates from benign traffic in a way that may indicate activity from an adversary already inside the network.",
+    "technique_ids": [],
+    "impact": "If real, an internal host may be compromised and used for discovery or lateral movement.",
+    "actions": [
+      "Identify the internal host and review its recent process, login and network activity.",
+      "Look for internal scanning or unusual connections to other internal hosts.",
+      "Check endpoint protection alerts and recent downloads or executed files on the host.",
+      "Contain the host if compromise is confirmed and preserve evidence first.",
+      "Map each observed step to ATT&CK techniques per scenario before reporting."
+    ]
+  },
+  "Unknown": {
+    "summary": "The detector flagged this flow as anomalous, but the deviation pattern does not clearly point to a single attack family.",
+    "technique_ids": [],
+    "impact": "Unknown. The flow may be malicious, misconfigured or simply rare benign traffic; treat it as unverified.",
+    "actions": [
+      "Review the top deviating features and compare them with recent traffic from the same hosts.",
+      "Check whether similar flows were flagged around the same time.",
+      "Correlate with firewall, proxy, DNS and endpoint logs for the involved hosts.",
+      "Escalate if correlated evidence suggests malicious activity; otherwise record as reviewed.",
+      "Feed the analyst decision back so recurring false positives can be measured."
+    ]
+  }
+}

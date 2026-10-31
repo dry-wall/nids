@@ -1,0 +1,300 @@
+{
+  "n_queries": 20,
+  "systems": {
+    "TF-IDF (1-2 gram)": {
+      "recall@1": 0.6,
+      "ndcg@1": 0.6,
+      "precision@1": 0.6,
+      "recall@3": 0.8,
+      "ndcg@3": 0.5351959044517067,
+      "precision@3": 0.5166666666666666,
+      "recall@5": 0.9,
+      "ndcg@5": 0.5080975035451185,
+      "precision@5": 0.48,
+      "recall@10": 0.95,
+      "ndcg@10": 0.44119817547839235,
+      "precision@10": 0.31500000000000006,
+      "mrr": 0.7141666666666666
+    },
+    "BM25": {
+      "recall@1": 0.65,
+      "ndcg@1": 0.65,
+      "precision@1": 0.65,
+      "recall@3": 0.8,
+      "ndcg@3": 0.5648040955482931,
+      "precision@3": 0.5333333333333333,
+      "recall@5": 0.85,
+      "ndcg@5": 0.5075556324018929,
+      "precision@5": 0.45999999999999996,
+      "recall@10": 0.9,
+      "ndcg@10": 0.46382475002368195,
+      "precision@10": 0.33499999999999996,
+      "mrr": 0.7322222222222222
+    }
+  },
+  "per_query": [
+    {
+      "query": "flood of HTTP requests exhausting web server threads",
+      "relevant_if": [
+        "T:T1499"
+      ],
+      "n_relevant": 11,
+      "first_hit_rank": 1,
+      "top3": [
+        "attack:T1499.002:description:0",
+        "attack:T1505.003:description:0",
+        "attack:T1505.004:description:0"
+      ]
+    },
+    {
+      "query": "slow partial HTTP requests hold connections open until the server runs out of capacity",
+      "relevant_if": [
+        "T:T1499"
+      ],
+      "n_relevant": 11,
+      "first_hit_rank": 1,
+      "top3": [
+        "attack:T1499.002:description:0",
+        "attack:T1505.004:description:0",
+        "nist-800-61r3:3.1:PR.IR-04:0"
+      ]
+    },
+    {
+      "query": "volumetric traffic from many sources saturating network bandwidth",
+      "relevant_if": [
+        "T:T1498"
+      ],
+      "n_relevant": 6,
+      "first_hit_rank": 3,
+      "top3": [
+        "attack:T1496.002:description:0",
+        "attack:T1496:description:0",
+        "attack:T1498:description:0"
+      ]
+    },
+    {
+      "query": "reflection and amplification using spoofed UDP requests",
+      "relevant_if": [
+        "T:T1498"
+      ],
+      "n_relevant": 6,
+      "first_hit_rank": 1,
+      "top3": [
+        "attack:T1498.002:description:0",
+        "attack:T1498.002:mitigation-M1037:0",
+        "attack:T1557.001:description:0"
+      ]
+    },
+    {
+      "query": "enumerate listening services and open ports on remote hosts",
+      "relevant_if": [
+        "T:T1046"
+      ],
+      "n_relevant": 4,
+      "first_hit_rank": 5,
+      "top3": [
+        "attack:T1205.001:description:0",
+        "attack:T1686.003:description:0",
+        "attack:T1538:description:0"
+      ]
+    },
+    {
+      "query": "repeated password guessing against SSH logins",
+      "relevant_if": [
+        "T:T1110"
+      ],
+      "n_relevant": 22,
+      "first_hit_rank": 1,
+      "top3": [
+        "attack:T1110.001:mitigation-M1027:0",
+        "attack:T1110.001:mitigation-M1032:0",
+        "attack:T1110.001:mitigation-M1051:0"
+      ]
+    },
+    {
+      "query": "credential stuffing with leaked username and password pairs",
+      "relevant_if": [
+        "T:T1110"
+      ],
+      "n_relevant": 22,
+      "first_hit_rank": 1,
+      "top3": [
+        "attack:T1110.004:mitigation-M1027:0",
+        "attack:T1110.004:description:0",
+        "attack:T1110.004:mitigation-M1018:0"
+      ]
+    },
+    {
+      "query": "account lockout after failed login attempts",
+      "relevant_if": [
+        "T:T1110"
+      ],
+      "n_relevant": 22,
+      "first_hit_rank": 1,
+      "top3": [
+        "attack:T1110:mitigation-M1036:0",
+        "attack:T1110.001:mitigation-M1036:0",
+        "attack:T1110.004:mitigation-M1036:0"
+      ]
+    },
+    {
+      "query": "SQL injection against an internet-facing web application",
+      "relevant_if": [
+        "T:T1190"
+      ],
+      "n_relevant": 9,
+      "first_hit_rank": 1,
+      "top3": [
+        "attack:T1190:mitigation-M1050:0",
+        "attack:T1190:description:0",
+        "attack:T1505.001:mitigation-M1045:0"
+      ]
+    },
+    {
+      "query": "exploit a vulnerability in a public web server for initial access",
+      "relevant_if": [
+        "T:T1190"
+      ],
+      "n_relevant": 9,
+      "first_hit_rank": 2,
+      "top3": [
+        "attack:T1505.003:description:0",
+        "attack:T1190:mitigation-M1016:0",
+        "attack:T1595.002:description:0"
+      ]
+    },
+    {
+      "query": "web application firewall to block exploitation attempts",
+      "relevant_if": [
+        "T:T1190"
+      ],
+      "n_relevant": 9,
+      "first_hit_rank": 3,
+      "top3": [
+        "attack:T1552:mitigation-M1037:0",
+        "attack:T1552.005:mitigation-M1037:0",
+        "attack:T1190:mitigation-M1050:0"
+      ]
+    },
+    {
+      "query": "malware command and control over HTTP blending with normal web traffic",
+      "relevant_if": [
+        "T:T1071"
+      ],
+      "n_relevant": 18,
+      "first_hit_rank": 1,
+      "top3": [
+        "attack:T1071.001:description:0",
+        "attack:T1001.003:description:0",
+        "attack:T1071.001:mitigation-M1037:0"
+      ]
+    },
+    {
+      "query": "bot beaconing to a remote controller over an application layer protocol",
+      "relevant_if": [
+        "T:T1071"
+      ],
+      "n_relevant": 18,
+      "first_hit_rank": 1,
+      "top3": [
+        "attack:T1071:mitigation-M1031:0",
+        "attack:T1095:mitigation-M1031:0",
+        "attack:T1071:mitigation-M1037:0"
+      ]
+    },
+    {
+      "query": "filter network traffic upstream to mitigate denial of service",
+      "relevant_if": [
+        "T:T1498",
+        "T:T1499"
+      ],
+      "n_relevant": 17,
+      "first_hit_rank": 1,
+      "top3": [
+        "attack:T1499:mitigation-M1037:0",
+        "attack:T1498:mitigation-M1037:0",
+        "attack:T1499.002:mitigation-M1037:0"
+      ]
+    },
+    {
+      "query": "networks and network services are monitored to find potentially adverse events",
+      "relevant_if": [
+        "csf:DE.CM"
+      ],
+      "n_relevant": 6,
+      "first_hit_rank": 1,
+      "top3": [
+        "nist-800-61r3:3.2:DE.CM-01:0",
+        "nist-800-61r3:3.2:DE.CM-02:0",
+        "nist-800-61r3:3.2:DE.CM-06:0"
+      ]
+    },
+    {
+      "query": "contain the incident to stop it from spreading",
+      "relevant_if": [
+        "csf:RS.MI"
+      ],
+      "n_relevant": 3,
+      "first_hit_rank": null,
+      "top3": [
+        "nist-800-61r3:2.2:3",
+        "attack:T1489:mitigation-M1060:0",
+        "attack:T1489:mitigation-M1018:0"
+      ]
+    },
+    {
+      "query": "eradicate the incident and remove attacker persistence",
+      "relevant_if": [
+        "csf:RS.MI"
+      ],
+      "n_relevant": 3,
+      "first_hit_rank": 6,
+      "top3": [
+        "nist-800-61r3:3.2:RS.MA:0~1",
+        "nist-800-61r3:3.2:RS.MA-03:0",
+        "attack:T1190:mitigation-M1037:0"
+      ]
+    },
+    {
+      "query": "analyse the incident to establish what happened and its root cause",
+      "relevant_if": [
+        "csf:RS.AN"
+      ],
+      "n_relevant": 5,
+      "first_hit_rank": 1,
+      "top3": [
+        "nist-800-61r3:3.2:RS.AN-03:0",
+        "nist-800-61r3:3.2:RS.AN:0",
+        "nist-800-61r3:1:1"
+      ]
+    },
+    {
+      "query": "restore systems and confirm normal operations after an incident",
+      "relevant_if": [
+        "csf:RC.RP"
+      ],
+      "n_relevant": 7,
+      "first_hit_rank": 2,
+      "top3": [
+        "nist-800-61r3:3.2:RS.MI-02:0",
+        "nist-800-61r3:3.2:RC.RP-04:0",
+        "nist-800-61r3:2.2:0"
+      ]
+    },
+    {
+      "query": "incident response roles and responsibilities in an organisation",
+      "relevant_if": [
+        "sec:2.2"
+      ],
+      "n_relevant": 4,
+      "first_hit_rank": 4,
+      "top3": [
+        "nist-800-61r3:3.1:GV.RR:0",
+        "nist-800-61r3:2:0",
+        "nist-800-61r3:3.1:GV.RR-02:0"
+      ]
+    }
+  ],
+  "recommended_k": 5,
+  "note": "Phase-1 prototype; hybrid BM25 + dense + FAISS in Phase 2."
+}
